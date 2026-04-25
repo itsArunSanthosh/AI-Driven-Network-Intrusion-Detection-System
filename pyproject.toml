@@ -1,0 +1,7 @@
+[project]
+name = "ai-nids"
+version = "0.1.0"
+description = "AI-powered Network Intrusion Detection System"
+
+[tool.black]
+line-length = 88

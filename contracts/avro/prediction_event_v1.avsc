@@ -1,0 +1,12 @@
+{
+  "type": "record",
+  "name": "PredictionEvent",
+  "namespace": "ai.nids",
+  "fields": [
+    {"name": "flow_id", "type": "string"},
+    {"name": "timestamp", "type": "long"},
+    {"name": "model_version", "type": "string"},
+    {"name": "risk_score", "type": "double"},
+    {"name": "prediction", "type": "string"}
+  ]
+}

@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: ai-nids
+data:
+  KAFKA_BROKER: "kafka:9092"
+  REDIS_HOST: "redis"

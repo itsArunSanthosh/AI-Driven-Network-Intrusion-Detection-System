@@ -1,0 +1,44 @@
+version: "3.8"
+
+services:
+
+  zookeeper:
+    image: bitnami/zookeeper:latest
+    ports:
+      - "2181:2181"
+
+  kafka:
+    image: bitnami/kafka:latest
+    ports:
+      - "9092:9092"
+    depends_on:
+      - zookeeper
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+
+  ingestion:
+    build:
+      context: ../../
+      dockerfile: infra/docker/ingestion/Dockerfile
+    depends_on:
+      - kafka
+
+  streaming:
+    build:
+      context: ../../
+      dockerfile: infra/docker/streaming/Dockerfile
+    depends_on:
+      - kafka
+
+  inference:
+    build:
+      context: ../../
+      dockerfile: infra/docker/inference/Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - kafka
+      - redis

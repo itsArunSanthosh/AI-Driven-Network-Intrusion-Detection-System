@@ -1,0 +1,13 @@
+{
+  "type": "record",
+  "name": "FeedbackEvent",
+  "namespace": "ai.nids",
+  "fields": [
+    {"name": "alert_id", "type": "string"},
+    {"name": "flow_id", "type": "string"},
+    {"name": "timestamp", "type": "long"},
+    {"name": "analyst_id", "type": "string"},
+    {"name": "label", "type": "string"},
+    {"name": "confidence", "type": "double"}
+  ]
+}

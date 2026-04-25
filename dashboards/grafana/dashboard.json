@@ -1,0 +1,15 @@
+{
+  "title": "AI-NIDS Monitoring",
+  "panels": [
+    {
+      "type": "graph",
+      "title": "Request Throughput",
+      "targets": [{"expr": "request_count"}]
+    },
+    {
+      "type": "graph",
+      "title": "Latency",
+      "targets": [{"expr": "avg_latency"}]
+    }
+  ]
+}
