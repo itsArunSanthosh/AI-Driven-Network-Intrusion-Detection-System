@@ -402,3 +402,34 @@ The system incorporates a human-in-the-loop feedback mechanism to continuously i
 - Continuous learning  
 
 ---
+
+##  Future Work
+
+The current system is highly effective at detecting network-level and behavioral anomalies. However, it has limitations in identifying:
+
+- Encrypted traffic patterns  
+- Low-and-slow attacks  
+- Application-layer attacks  
+
+These limitations arise from reliance on flow-level features and lack of deep packet or application visibility.
+
+###  Future Direction
+
+To address these gaps, the system will be extended into a more comprehensive, multi-layer detection platform by:
+
+- Incorporating application-layer and protocol-aware features  
+- Integrating endpoint and system-level telemetry  
+- Enhancing detection for stealthy and encrypted attack patterns  
+
+###  Vision
+
+Evolve the system from a network-based detector into a unified, multi-layer intrusion detection platform capable of identifying threats across network, application, and behavioral layers.
+
+---
+## How to Run
+
+git --clone repo--
+python -m venv venv
+pip install -r requirements.txt
+docker-compose up -d
+python ingestion/producer.py
