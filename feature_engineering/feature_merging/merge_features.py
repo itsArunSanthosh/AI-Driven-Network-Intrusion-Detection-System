@@ -1,7 +1,3 @@
-"""
-Merges features into final model-ready vector.
-"""
-
 def merge_features(flow: dict) -> dict:
     feature_vector = {
         "flow_id": flow.get("flow_id"),

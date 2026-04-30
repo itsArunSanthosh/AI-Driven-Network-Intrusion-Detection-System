@@ -1,7 +1,3 @@
-"""
-Manages sensitive configuration.
-"""
-
 import os
 
 def get_secret(key: str, default=None):

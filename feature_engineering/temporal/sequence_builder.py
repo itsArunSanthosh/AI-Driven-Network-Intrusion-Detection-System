@@ -1,7 +1,3 @@
-"""
-Builds sequences of flows for temporal modeling (LSTM-ready).
-"""
-
 from collections import defaultdict
 
 class SequenceBuilder:

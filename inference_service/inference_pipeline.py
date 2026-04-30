@@ -1,10 +1,3 @@
-"""
-End-to-end inference pipeline.
-
-Flow:
-Entity → Feature Fetch → Predict → Return
-"""
-
 from model_loader.loader import ModelLoader
 from feature_fetcher.fetcher import FeatureFetcher
 from predictors.predictor import Predictor

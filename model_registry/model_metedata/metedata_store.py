@@ -1,7 +1,3 @@
-"""
-Stores metadata about models.
-"""
-
 import time
 
 class MetadataStore:

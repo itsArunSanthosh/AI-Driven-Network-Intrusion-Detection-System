@@ -1,7 +1,3 @@
-"""
-Manages model versioning.
-"""
-
 class VersionManager:
     def __init__(self):
         self.versions = {}

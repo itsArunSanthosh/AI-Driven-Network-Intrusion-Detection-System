@@ -1,5 +1,5 @@
 """
-Sends alerts to Kafka topic.
+alerts to Kafka topic.
 """
 
 from kafka import KafkaProducer

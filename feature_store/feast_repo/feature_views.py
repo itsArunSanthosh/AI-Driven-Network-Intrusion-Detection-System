@@ -1,7 +1,3 @@
-"""
-Defines feature views (logical grouping of features).
-"""
-
 FLOW_FEATURE_VIEW = [
     "bytes_per_second",
     "packets_per_second"

@@ -1,8 +1,3 @@
-"""
-Simple graph-based feature extraction.
-
-Builds communication graph dynamically.
-"""
 
 from collections import defaultdict
 

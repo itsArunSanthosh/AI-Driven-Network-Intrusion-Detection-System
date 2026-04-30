@@ -1,7 +1,3 @@
-"""
-Tracks system and model metrics.
-"""
-
 import time
 
 class MetricsCollector:

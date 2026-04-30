@@ -1,7 +1,3 @@
-"""
-Handles batch prediction requests.
-"""
-
 def process_batch(requests, predictor):
     results = []
 

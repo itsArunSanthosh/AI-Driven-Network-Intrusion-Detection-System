@@ -1,7 +1,3 @@
-"""
-Defines alert triggering logic.
-"""
-
 class ThresholdEngine:
     def __init__(self, threshold=0.6):
         self.threshold = threshold

@@ -1,8 +1,3 @@
-"""
-Behavioral feature computation using simple in-memory state.
-
-Tracks behavior per source IP.
-"""
 
 from collections import defaultdict
 import time

@@ -1,7 +1,3 @@
-"""
-Handles sequence inference using LSTM model.
-"""
-
 import torch
 from models.utils import dict_to_vector
 from .lstm_model import LSTMModel

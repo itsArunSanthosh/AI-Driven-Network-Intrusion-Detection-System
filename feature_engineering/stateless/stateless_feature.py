@@ -1,9 +1,3 @@
-"""
-Stateless feature computation.
-
-These features depend only on a single flow.
-"""
-
 def compute_stateless_features(flow: dict) -> dict:
     duration = flow.get("duration", 0.0)
     bytes_sent = flow.get("bytes_sent", 0)

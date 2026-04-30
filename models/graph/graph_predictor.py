@@ -1,6 +1,3 @@
-"""
-Graph prediction wrapper.
-"""
 
 from .graph_model import GraphModel
 

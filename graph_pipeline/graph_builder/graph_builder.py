@@ -1,7 +1,3 @@
-"""
-Builds initial graph structure from flows.
-"""
-
 from collections import defaultdict
 
 class GraphBuilder:

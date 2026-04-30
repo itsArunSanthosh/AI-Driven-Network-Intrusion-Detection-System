@@ -1,7 +1,3 @@
-"""
-Detects drift in prediction outputs.
-"""
-
 import numpy as np
 
 class PredictionDriftDetector:

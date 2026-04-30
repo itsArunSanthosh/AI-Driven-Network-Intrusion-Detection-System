@@ -1,7 +1,3 @@
-"""
-Preprocessing pipeline for training.
-"""
-
 from models.utils import FEATURE_COLUMNS
 
 def preprocess(df):

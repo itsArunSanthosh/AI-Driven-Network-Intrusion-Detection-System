@@ -1,7 +1,3 @@
-"""
-Handles dynamic updates to the graph as new flows arrive.
-"""
-
 class GraphUpdater:
     def __init__(self, graph_builder):
         self.graph_builder = graph_builder

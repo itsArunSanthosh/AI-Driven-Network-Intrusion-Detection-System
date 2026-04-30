@@ -1,7 +1,3 @@
-"""
-Runs experiments and logs results.
-"""
-
 import time
 
 class ExperimentRunner:

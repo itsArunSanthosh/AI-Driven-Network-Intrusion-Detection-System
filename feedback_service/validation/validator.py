@@ -1,7 +1,3 @@
-"""
-Validates incoming feedback data.
-"""
-
 class FeedbackValidator:
     def validate(self, feedback: dict) -> bool:
         required_fields = ["alert_id", "label", "analyst_id"]

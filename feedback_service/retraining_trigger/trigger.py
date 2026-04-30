@@ -1,7 +1,3 @@
-"""
-Triggers retraining based on feedback volume.
-"""
-
 class RetrainingTrigger:
     def __init__(self, threshold=5):
         self.threshold = threshold

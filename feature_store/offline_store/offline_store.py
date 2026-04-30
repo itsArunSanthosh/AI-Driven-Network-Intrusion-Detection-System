@@ -1,9 +1,3 @@
-"""
-Offline feature store (for training).
-
-Stores features in-memory (simulating parquet/data warehouse).
-"""
-
 class OfflineStore:
     def __init__(self):
         self.storage = []

@@ -1,7 +1,3 @@
-"""
-FastAPI endpoint for receiving feedback.
-"""
-
 from fastapi import APIRouter
 from feedback_pipeline import FeedbackPipeline
 

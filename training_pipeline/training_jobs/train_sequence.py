@@ -1,7 +1,3 @@
-"""
-Train LSTM sequence model.
-"""
-
 import torch
 import torch.nn as nn
 from models.sequence.lstm_model import LSTMModel

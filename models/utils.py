@@ -1,7 +1,3 @@
-"""
-Utility functions for model input preparation.
-"""
-
 import numpy as np
 
 FEATURE_COLUMNS = [

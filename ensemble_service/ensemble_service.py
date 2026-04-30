@@ -1,10 +1,3 @@
-"""
-Main Ensemble Service.
-
-Flow:
-Model Predictions → Aggregate → Risk Score → Classification
-"""
-
 from aggregator.aggregator import PredictionAggregator
 from risk_scoring.scorer import RiskScorer
 

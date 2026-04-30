@@ -1,7 +1,3 @@
-"""
-Loads latest models from registry.
-"""
-
 from model_registry.model_registry_manager import ModelRegistryManager
 from models.supervised.predict import SupervisedModel
 from models.anomaly.isolation_forest import AnomalyModel

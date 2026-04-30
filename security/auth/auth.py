@@ -1,7 +1,3 @@
-"""
-Simple API authentication using API keys.
-"""
-
 VALID_API_KEYS = {"secure-key-123"}
 
 def authenticate(api_key: str) -> bool:

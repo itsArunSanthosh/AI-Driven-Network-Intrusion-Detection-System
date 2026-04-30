@@ -1,7 +1,3 @@
-"""
-Computes final risk score and decision.
-"""
-
 class RiskScorer:
     def __init__(self):
         # Configurable weights

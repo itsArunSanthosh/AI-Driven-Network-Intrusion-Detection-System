@@ -1,11 +1,3 @@
-"""
-Feature Store Manager.
-
-Handles:
-- Writing features to offline + online stores
-- Fetching features for inference
-"""
-
 from offline_store.offline_store import OfflineStore
 from online_store.online_store import OnlineStore
 

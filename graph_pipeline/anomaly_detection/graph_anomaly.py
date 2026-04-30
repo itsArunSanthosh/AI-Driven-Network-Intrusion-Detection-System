@@ -1,9 +1,3 @@
-"""
-Detects anomalies in graph structure.
-
-Simple heuristic-based approach.
-"""
-
 def detect_anomaly(embedding: dict) -> float:
     degree = embedding["degree"]
 

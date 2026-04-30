@@ -1,7 +1,3 @@
-"""
-Monitoring pipeline for inference system.
-"""
-
 from metrics.metrics import MetricsCollector
 from logging.logger import Logger
 from tracing.tracer import Tracer

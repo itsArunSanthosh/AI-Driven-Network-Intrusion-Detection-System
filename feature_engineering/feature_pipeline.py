@@ -1,15 +1,3 @@
-"""
-Main feature engineering pipeline.
-
-Flow:
-Standardized Flow →
-Stateless →
-Behavioral →
-Graph →
-Merge →
-Output Feature Vector
-"""
-
 from stateless.stateless_features import compute_stateless_features
 from behavioral.behavioral_features import BehavioralFeatureEngine
 from graph.graph_features import GraphFeatureEngine

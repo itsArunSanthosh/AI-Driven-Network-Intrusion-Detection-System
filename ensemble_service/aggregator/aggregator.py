@@ -1,7 +1,3 @@
-"""
-Aggregates predictions from different models.
-"""
-
 class PredictionAggregator:
     def aggregate(self, predictions: dict) -> dict:
         """

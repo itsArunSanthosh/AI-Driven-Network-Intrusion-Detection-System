@@ -1,7 +1,3 @@
-"""
-Simple LSTM model for sequence-based anomaly detection.
-"""
-
 import torch
 import torch.nn as nn
 

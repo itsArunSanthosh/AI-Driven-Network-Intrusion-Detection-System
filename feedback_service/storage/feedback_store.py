@@ -1,7 +1,3 @@
-"""
-Stores feedback for future retraining.
-"""
-
 class FeedbackStore:
     def __init__(self):
         self.storage = []

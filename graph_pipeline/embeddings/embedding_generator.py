@@ -1,9 +1,3 @@
-"""
-Generates simple node embeddings from graph structure.
-
-Note: Placeholder for advanced GNN-based embeddings.
-"""
-
 def generate_embedding(graph: dict, node: str) -> dict:
     neighbors = graph.get(node, set())
 

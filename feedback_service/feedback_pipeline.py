@@ -1,7 +1,3 @@
-"""
-End-to-end feedback processing pipeline.
-"""
-
 from validation.validator import FeedbackValidator
 from storage.feedback_store import FeedbackStore
 from retraining_trigger.trigger import RetrainingTrigger

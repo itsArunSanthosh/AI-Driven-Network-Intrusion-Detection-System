@@ -1,8 +1,3 @@
-"""
-Graph-based model using structural features.
-
-This acts as a lightweight alternative to GNN.
-"""
 
 class GraphModel:
     def predict(self, features: dict):

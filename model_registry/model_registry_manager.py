@@ -1,7 +1,3 @@
-"""
-Central manager for model registry.
-"""
-
 from registry_client.registry import RegistryClient
 from versioning.version_manager import VersionManager
 from model_metadata.metadata_store import MetadataStore

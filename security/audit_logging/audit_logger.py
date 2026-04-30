@@ -1,7 +1,3 @@
-"""
-Logs security-sensitive actions.
-"""
-
 import time
 
 class AuditLogger:

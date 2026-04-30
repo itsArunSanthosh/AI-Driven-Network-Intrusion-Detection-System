@@ -1,7 +1,3 @@
-"""
-Generates structured alert objects.
-"""
-
 import time
 import uuid
 

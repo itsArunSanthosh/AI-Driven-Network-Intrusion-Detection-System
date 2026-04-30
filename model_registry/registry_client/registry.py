@@ -1,7 +1,3 @@
-"""
-Handles saving and loading models from registry.
-"""
-
 import os
 import joblib
 

@@ -1,7 +1,3 @@
-"""
-Fetches features from online feature store.
-"""
-
 from feature_store.feature_store_manager import FeatureStoreManager
 
 class FeatureFetcher:

@@ -1,7 +1,3 @@
-"""
-Model validation logic.
-"""
-
 from models.evaluation.metrics import evaluate
 
 def validate_model(model, X, y):

@@ -1,7 +1,3 @@
-"""
-Detects concept drift based on performance degradation.
-"""
-
 class ConceptDriftDetector:
     def detect(self, old_metrics: dict, new_metrics: dict):
         drift = {}

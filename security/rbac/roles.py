@@ -1,7 +1,3 @@
-"""
-Role-Based Access Control (RBAC).
-"""
-
 ROLE_PERMISSIONS = {
     "admin": ["read", "write", "delete"],
     "analyst": ["read", "write"],

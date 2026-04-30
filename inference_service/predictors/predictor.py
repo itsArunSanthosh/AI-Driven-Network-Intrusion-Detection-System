@@ -1,7 +1,3 @@
-"""
-Runs ensemble prediction.
-"""
-
 from models.ensemble.ensemble import EnsembleModel
 
 class Predictor:

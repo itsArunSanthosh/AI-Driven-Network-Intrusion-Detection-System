@@ -1,10 +1,3 @@
-"""
-Main graph processing pipeline.
-
-Flow:
-Flow → Graph Update → Embedding → Anomaly Score
-"""
-
 from graph_builder.graph_builder import GraphBuilder
 from graph_updates.graph_updater import GraphUpdater
 from embeddings.embedding_generator import generate_embedding

@@ -1,10 +1,3 @@
-"""
-Main training pipeline.
-
-Flow:
-Load → Preprocess → Train → Validate → Log
-"""
-
 from data_loader.loader import DataLoader
 from preprocessing.preprocess import preprocess
 from training_jobs.train_supervised import train_supervised

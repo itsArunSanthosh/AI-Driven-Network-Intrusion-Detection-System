@@ -1,7 +1,3 @@
-"""
-Dispatches alerts to configured integrations.
-"""
-
 from integrations.log_alert import log_alert
 from integrations.kafka_alert import KafkaAlertProducer
 

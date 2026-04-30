@@ -1,7 +1,3 @@
-"""
-Train supervised model.
-"""
-
 from xgboost import XGBClassifier
 import joblib
 

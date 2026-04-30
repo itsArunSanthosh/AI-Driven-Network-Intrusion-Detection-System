@@ -1,7 +1,3 @@
-"""
-Defines system alert rules.
-"""
-
 class AlertRules:
     def check(self, metrics: dict):
         alerts = []

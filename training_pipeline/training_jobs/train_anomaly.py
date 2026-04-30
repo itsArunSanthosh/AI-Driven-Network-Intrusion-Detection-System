@@ -1,7 +1,3 @@
-"""
-Train anomaly detection model.
-"""
-
 from sklearn.ensemble import IsolationForest
 from models.utils import dict_to_vector
 

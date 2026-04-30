@@ -1,9 +1,3 @@
-"""
-Online feature store (low-latency access).
-
-Simulates Redis-like key-value store.
-"""
-
 class OnlineStore:
     def __init__(self):
         self.store = {}

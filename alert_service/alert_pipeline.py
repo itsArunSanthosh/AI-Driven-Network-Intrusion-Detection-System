@@ -1,10 +1,3 @@
-"""
-End-to-end alert pipeline.
-
-Flow:
-Prediction → Threshold → Generate Alert → Dispatch
-"""
-
 from thresholding.threshold import ThresholdEngine
 from alert_generator.generator import AlertGenerator
 from alert_dispatcher.dispatcher import AlertDispatcher

@@ -1,7 +1,3 @@
-"""
-Generates drift reports.
-"""
-
 class DriftReportGenerator:
     def generate(self, data_drift, concept_drift, prediction_drift):
         return {

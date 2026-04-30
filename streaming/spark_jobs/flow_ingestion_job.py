@@ -1,7 +1,3 @@
-"""
-Reads standardized flow data from Kafka and converts it into a Spark DataFrame.
-"""
-
 from pyspark.sql import SparkSession
 
 def create_kafka_stream():

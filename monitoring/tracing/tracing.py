@@ -1,7 +1,3 @@
-"""
-Simple tracing utility for request flow.
-"""
-
 import time
 
 class Tracer:

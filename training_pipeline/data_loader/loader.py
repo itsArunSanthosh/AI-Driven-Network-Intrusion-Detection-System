@@ -1,7 +1,3 @@
-"""
-Loads training data from feature store.
-"""
-
 from feature_store.feature_store_manager import FeatureStoreManager
 import pandas as pd
 
