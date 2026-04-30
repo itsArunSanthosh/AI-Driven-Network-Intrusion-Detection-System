@@ -34,6 +34,49 @@ Providing real-time alerts, helping security teams respond quickly
 It’s like a smart security guard in a company who not only checks ID cards (known rules) but also notices unusual behavior—like someone accessing multiple restricted rooms or working at odd hours—and flags it as suspicious.
 
 ---
+##  Demo
+
+A visual walkthrough of the system demonstrating real-time data flow, processing, and intrusion detection.
+
+---
+
+###  1. Traffic Simulation
+
+Simulated network traffic (normal + attack patterns) being generated and streamed into the system.
+
+🎬 *Demo:*  
+![Live Traffic Simulation](docs/demo/demo_gifs/live_traffic_generation.gif)
+
+---
+
+###  2. Real-Time Kafka Stream
+
+Live streaming of network events through Kafka topics, enabling scalable event-driven processing.
+
+🎬 *Demo:*  
+![Kafka Stream](docs/demo/demo_gifs/kafka_stream.gif)
+
+
+---
+
+###  3. Alert Generation
+
+System detecting suspicious activity and generating alerts based on risk scoring.
+
+🎬 *Demo:*  
+![Alerts](docs/demo/demo_gifs/alert_generation.gif)
+
+---
+
+###  4. Live Dashboard Monitoring
+
+Real-time dashboard visualizing traffic patterns, system metrics, and detected anomalies.
+
+🎬 *Demo:*  
+![Dashboard](docs/demo/demo_gifs/dashboard.gif)
+
+---
+
 ##  System Architecture
 
 ![System Architecture](docs/architecture/system_architecture.png)
@@ -845,45 +888,3 @@ The system evolves based on real-world usage:
 - Adaptive system behavior over time  
 
 ---
-
-##  Demo
-
-A visual walkthrough of the system demonstrating real-time data flow, processing, and intrusion detection.
-
----
-
-###  1. Traffic Simulation
-
-Simulated network traffic (normal + attack patterns) being generated and streamed into the system.
-
-🎬 *Demo:*  
-![Live Traffic Simulation](docs/demo/live_traffic_generation.mp4)
-![Live Traffic Simulation](docs/demo/live_traffic_generation2.mp4)
-
----
-
-###  2. Real-Time Kafka Stream
-
-Live streaming of network events through Kafka topics, enabling scalable event-driven processing.
-
-🎬 *Demo:*  
-![Kafka Stream](docs/demo/kafka_stream.mp4)
-
-
----
-
-###  3. Alert Generation
-
-System detecting suspicious activity and generating alerts based on risk scoring.
-
-🎬 *Demo:*  
-![Alerts](docs/demo/alert_generation.mp4)
-
----
-
-###  4. Live Dashboard Monitoring
-
-Real-time dashboard visualizing traffic patterns, system metrics, and detected anomalies.
-
-🎬 *Demo:*  
-![Dashboard](docs/demo/dashboard.mp4)
