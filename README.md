@@ -45,7 +45,7 @@ A visual walkthrough of the system demonstrating real-time data flow, processing
 Simulated network traffic (normal + attack patterns) being generated and streamed into the system.
 
 🎬 *Demo:*  
-![Live Traffic Simulation](docs/demo/demo_gifs/live_traffic_generation.gif)
+![Live Traffic Simulation](docs/demo/demo_gifs/live_traffic_generation_2.gif)
 
 ---
 
@@ -139,6 +139,11 @@ The system continuously monitors model performance, detects drift, and incorpora
 ---
 
 ##  Data Pipeline
+<p align="center">
+  <a href="docs/architecture/feature_engineering.png">
+    <img src="docs/architecture/feature_engineering.png" width="600"/>
+  </a>
+</p>
 
 The data pipeline is responsible for transforming raw network traffic into structured, high-quality flow data suitable for real-time feature engineering and machine learning.
 
@@ -207,8 +212,11 @@ At this stage, the data is:
 
 ##  Feature Engineering
 
-![Feature Engineering Pipeline](docs/architecture/feature_engineering.png)
-![Feature Engineering Pipeline](docs/architecture/feature_engineering_2.png)
+<p align="center">
+  <a href="docs/architecture/feature_engineering_2.png">
+    <img src="docs/architecture/feature_engineering_2.png" width="600"/>
+  </a>
+</p>
 
 The feature engineering layer transforms standardized network flows into rich, multi-dimensional representations that capture behavioral patterns, temporal dynamics, and structural relationships within the network.
 
@@ -216,87 +224,13 @@ This layer is critical for enabling accurate and robust intrusion detection, as 
 
 ---
 
-###  1. Stateless Flow Features
-
-Basic features are computed directly from individual flow records without requiring historical context:
-
-- Connection duration  
-- Bytes per second  
-- Packets per second  
-- TCP flag ratios  
-- Directional traffic statistics  
-
-These features provide immediate insights into individual network interactions.
-
-
-###  2. Stateful Behavioral Features
-
-To capture patterns over time, the system performs window-based aggregation using stateful stream processing.
-
-Examples include:
-
-- Number of connections per host (sliding window)  
-- Unique destination count  
-- Failed connection rate  
-- Traffic burst patterns  
-- Rare destination detection  
-
-These features help identify behaviors such as:
-
-- Port scanning  
-- Brute-force attempts  
-- Data exfiltration  
-
-
-###  3. Temporal Features (Sequence Modeling)
-
-The system maintains time-ordered sequences of network activity for each host.
-
-This enables detection of multi-stage attacks where individual events may appear normal, but their sequence reveals malicious intent.
-
-Used for:
-
-- Attack progression detection  
-- Suspicious session behavior  
-- Sequential anomaly patterns  
-
-
-###  4. Graph-Based Features
-
-Network communication is modeled as a dynamic graph:
-
-- Nodes represent hosts (IP addresses)  
-- Edges represent communication between hosts  
-
-From this graph, structural features are extracted:
-
-- Degree centrality  
-- Betweenness centrality  
-- Node anomaly scores  
-- Community behavior changes  
-
-These features are particularly effective for detecting:
-
-- Lateral movement  
-- Command & Control communication  
-- Network-wide anomalies  
-
-
-###  5. Feature Vector Construction
-
-All feature types are combined into a unified feature vector for each flow or entity.
-
-This ensures:
-
-- Consistent input for machine learning models  
-- Rich contextual representation of network behavior  
-- Compatibility with both training and real-time inference pipelines  
-
----
-
 ##  Modeling Approach
 
-![Model Architecture](docs/architecture/modeling_pipeline.png)
+<p align="center">
+  <a href="docs/architecture/modeling_pipeline.png">
+    <img src="docs/architecture/modeling_pipeline.png" width="600"/>
+  </a>
+</p>
 
 The system uses a hybrid multi-model architecture to detect a wide range of cyber threats, combining strengths of different machine learning approaches.
 
@@ -362,7 +296,11 @@ This hybrid architecture ensures detection across:
 
 ##  Real-Time Inference Pipeline
 
-![Inference Pipeline](docs/architecture/inference_pipeline.png)
+<p align="center">
+  <a href="docs/architecture/inference_pipeline.png">
+    <img src="docs/architecture/inference_pipeline.png" width="600"/>
+  </a>
+</p>
 
 The inference pipeline is designed for low-latency, real-time detection of network threats using a distributed, event-driven architecture.
 
@@ -376,7 +314,6 @@ Pre-computed feature vectors are consumed from Kafka (`model-features`) by state
 
 - Enables scalable, parallel processing  
 - Decouples feature engineering from model inference  
-
 
 ###  2. Model Inference Services
 
@@ -393,14 +330,12 @@ This separation allows:
 - Isolated updates  
 - Fault tolerance  
 
-
 ###  3. Online Feature Retrieval
 
 If required, additional features are fetched from the online feature store for low-latency enrichment.
 
 - Ensures training-serving consistency  
 - Avoids recomputation during inference  
-
 
 ###  4. Ensemble Aggregation
 
@@ -409,7 +344,6 @@ Predictions from all models are combined using an ensemble layer to produce a fi
 - Improves robustness  
 - Reduces false positives  
 - Provides calibrated output  
-
 
 ###  5. Alert Generation
 
@@ -430,7 +364,11 @@ Events exceeding a defined risk threshold are flagged as potential threats.
 ---
 ##  MLOps & Model Management
 
-![MLOps Pipeline](docs/architecture/mlops_pipeline.png)
+<p align="center">
+  <a href="docs/architecture/mlops_pipeline.png">
+    <img src="docs/architecture/mlops_pipeline.png" width="600"/>
+  </a>
+</p>
 
 The system incorporates a complete MLOps pipeline to ensure reproducibility, version control, and reliable deployment of machine learning models in production.
 
@@ -444,7 +382,6 @@ Datasets and feature snapshots are versioned to maintain consistency between tra
 - Tracks data lineage  
 - Prevents training-serving mismatch  
 
-
 ###  2. Experiment Tracking
 
 All training experiments are tracked with parameters, metrics, and artifacts.
@@ -453,7 +390,6 @@ All training experiments are tracked with parameters, metrics, and artifacts.
 - Logs performance metrics (precision, recall, FPR)  
 - Stores model artifacts and evaluation results  
 
-
 ###  3. Model Registry
 
 Trained models are registered and versioned before deployment.
@@ -461,7 +397,6 @@ Trained models are registered and versioned before deployment.
 - Maintains model lifecycle (Staging → Production → Archived)  
 - Supports rollback to previous versions  
 - Ensures controlled promotion of models  
-
 
 ###  4. Automated Training Pipeline
 
@@ -473,8 +408,6 @@ Model training is automated and can be triggered by:
 
 This ensures the system adapts to evolving network behavior.
 
-
-
 ###  5. CI/CD Integration
 
 Model and service updates are deployed through automated pipelines.
@@ -482,7 +415,6 @@ Model and service updates are deployed through automated pipelines.
 - Code validation and testing  
 - Docker image builds  
 - Deployment to production environment  
-
 
 ###  6. Model Validation Gate
 
@@ -505,10 +437,13 @@ Only models that meet these criteria are promoted to production.
 
 ---
 
-
 ##  Drift Detection & Monitoring
 
-![Drift Monitoring Pipeline](docs/architecture/drift_monitoring.png)
+<p align="center">
+  <a href="docs/architecture/drift_monitoring.png">
+    <img src="docs/architecture/drift_monitoring.png" width="600"/>
+  </a>
+</p>
 
 The system continuously monitors data and model behavior to detect drift and ensure long-term reliability in dynamic network environments.
 
@@ -517,43 +452,34 @@ The system continuously monitors data and model behavior to detect drift and ens
 ###  1. Data Drift
 
 Monitors changes in input feature distributions over time.
-
 - Detects shifts in traffic patterns  
 - Compares real-time data with training baseline  
 - Prevents degradation due to evolving network behavior  
 
-
 ###  2. Concept Drift
 
 Tracks changes in the relationship between features and predictions.
-
 - Identifies drop in model performance  
 - Detects outdated decision boundaries  
 - Signals need for retraining  
 
-
 ###  3. Prediction Drift
 
 Monitors the distribution of model outputs.
-
 - Detects unusual spikes in risk scores  
 - Identifies unstable model behavior  
 - Helps diagnose inference anomalies  
 
-
 ###  4. Alert Drift (Operational Monitoring)
 
 Tracks alert volume and false positive trends.
-
 - Prevents alert fatigue  
 - Monitors false positive rate (FPR)  
 - Ensures operational effectiveness of the system  
 
-
 ###  5. Drift Response
 
 When drift thresholds are exceeded:
-
 - Alerts are triggered  
 - Retraining pipelines are activated  
 - Models are re-evaluated and updated  
@@ -568,10 +494,20 @@ When drift thresholds are exceeded:
 - Ensures long-term system stability and accuracy  
 
 ---
+
 ##  Deployment (Kubernetes)
 
-![Kubernetes Deployment](docs/architecture/kubernetes_deployment_1.png)
-![Kubernetes Deployment](docs/architecture/kubernetes_deployment_2.png)
+<p align="center">
+  <a href="docs/architecture/kubernetes_deployment_1.png">
+    <img src="docs/architecture/kubernetes_deployment_1.png" width="600"/>
+  </a>
+</p>
+
+<p align="center">
+  <a href="docs/architecture/kubernetes_deployment_2.png">
+    <img src="docs/architecture/kubernetes_deployment_2.png" width="600"/>
+  </a>
+</p>
 
 The system is deployed using Kubernetes to ensure scalability, high availability, and fault tolerance across all components.
 
@@ -580,7 +516,6 @@ The system is deployed using Kubernetes to ensure scalability, high availability
 ###  1. Microservices Architecture
 
 Each component runs as an independent service:
-
 - Ingestion services  
 - Streaming and feature processing  
 - Model inference services  
@@ -589,38 +524,30 @@ Each component runs as an independent service:
 
 This enables modular development and independent scaling.
 
-
 ###  2. Containerization
 
 All services are containerized using Docker.
-
 - Ensures consistent runtime environments  
 - Simplifies deployment across environments  
 - Enables portability and reproducibility  
 
-
 ###  3. Auto-Scaling
 
 Horizontal Pod Autoscaling (HPA) adjusts system capacity based on workload.
-
 - Scales inference services during traffic spikes  
 - Maintains low latency under high load  
 - Optimizes resource utilization  
 
-
 ###  4. Rolling Updates
 
 New versions of services are deployed without downtime.
-
 - Gradual traffic shift to new instances  
 - Safe rollback on failure  
 - Continuous delivery support  
 
-
 ###  5. Fault Tolerance & Self-Healing
 
 Kubernetes ensures system resilience:
-
 - Automatic pod restarts on failure  
 - Rescheduling on node failure  
 - Load balancing across instances  
@@ -630,7 +557,6 @@ Kubernetes ensures system resilience:
 ###  6. Resource Management
 
 Each service defines CPU and memory limits.
-
 - Prevents resource contention  
 - Ensures stable performance  
 - Isolates failures  
@@ -648,8 +574,17 @@ Each service defines CPU and memory limits.
 
 ##  Security Hardening
 
-![Security Architecture](docs/architecture/security_architecture_1.png)
-![Security Architecture](docs/architecture/security_architecture_2.png)
+<p align="center">
+  <a href="docs/architecture/security_architecture_1.png">
+    <img src="docs/architecture/security_architecture_1.png" width="600"/>
+  </a>
+</p>
+
+<p align="center">
+  <a href="docs/architecture/security_architecture_2.png">
+    <img src="docs/architecture/security_architecture_2.png" width="600"/>
+  </a>
+</p>
 
 As a cybersecurity system, the platform is designed with a zero-trust security model to protect data, services, and model integrity.
 
@@ -658,69 +593,54 @@ As a cybersecurity system, the platform is designed with a zero-trust security m
 ###  1. Secure Communication (TLS / mTLS)
 
 All service-to-service communication is encrypted.
-
 - TLS ensures data confidentiality  
 - mTLS enables mutual service authentication  
 - Prevents man-in-the-middle attacks  
 
-
 ###  2. Access Control (RBAC)
 
 Role-Based Access Control is enforced across the system.
-
 - Services operate with least privilege  
 - Access is restricted based on roles  
 - Reduces risk of unauthorized actions  
 
-
 ###  3. API Security
 
 All external endpoints are protected using:
-
 - JWT-based authentication  
 - Role-based authorization  
 - Rate limiting  
 
 Prevents unauthorized access and abuse.
 
-
-
 ###  4. Secrets Management
 
 Sensitive credentials are securely managed.
-
 - API keys and tokens are not stored in code  
 - Managed via secure secret storage  
 - Rotatable and access-controlled  
 
-
 ###  5. Kafka Security
 
 Streaming infrastructure is secured using:
-
 - Authentication (SASL)  
 - Encryption (SSL)  
 - Topic-level access control  
 
 Prevents unauthorized data injection or access.
 
----
-
 ###  6. Model & Data Protection
 
 The system protects against:
-
 - Model extraction attacks  
 - Data poisoning via feedback loops  
 - Unauthorized model access  
 
 Strict validation and access controls are enforced.
 
-
 ###  7. Audit Logging
 
 All critical actions are logged:
-
 - API access  
 - Model deployments  
 - Authentication events  
@@ -740,7 +660,11 @@ Enables traceability and incident investigation.
 
 ##  Observability & Metrics
 
-![Observability Pipeline](docs/architecture/observability.png)
+<p align="center">
+  <a href="docs/architecture/observability.png">
+    <img src="docs/architecture/observability.png" width="600"/>
+  </a>
+</p>
 
 The system implements full-stack observability to monitor infrastructure health, model performance, and detection effectiveness in real time.
 
@@ -749,60 +673,49 @@ The system implements full-stack observability to monitor infrastructure health,
 ###  1. System Metrics
 
 Infrastructure-level metrics are continuously tracked:
-
 - CPU and memory usage  
 - Service uptime and error rates  
 - Kafka lag and throughput  
 
 Ensures system stability and performance under load.
 
-
 ###  2. Latency Monitoring
 
 End-to-end latency is measured across the pipeline:
-
 - Feature processing latency  
 - Model inference time  
 - Total detection time  
 
 Maintains real-time detection guarantees.
 
-
 ###  3. Model Performance Metrics
 
 Key ML metrics are tracked:
-
 - Precision and Recall  
 - False Positive Rate (FPR)  
 - Risk score distribution  
 
 Ensures detection quality and operational reliability.
 
-
 ###  4. Alert Monitoring
 
 Operational metrics are monitored:
-
 - Alerts per minute  
 - Severity distribution  
 - False positive trends  
 
 Helps prevent alert fatigue and maintain SOC efficiency.
 
-
 ###  5. Logging & Tracing
 
 Structured logs and traces are collected:
-
 - Request-level tracking across services  
 - Error diagnostics and debugging  
 - End-to-end pipeline visibility  
 
-
 ###  6. Visualization & Dashboards
 
 All metrics are visualized in real time:
-
 - System health dashboards  
 - Model performance dashboards  
 - Security alert dashboards  
@@ -822,7 +735,11 @@ Enables rapid monitoring and decision-making.
 
 ##  Human Feedback Loop
 
-![Feedback Loop](docs/architecture/feedback_loop.png)
+<p align="center">
+  <a href="docs/architecture/feedback_loop.png">
+    <img src="docs/architecture/feedback_loop.png" width="600"/>
+  </a>
+</p>
 
 The system incorporates a human-in-the-loop feedback mechanism to continuously improve detection accuracy and adapt to evolving threats.
 
@@ -831,49 +748,40 @@ The system incorporates a human-in-the-loop feedback mechanism to continuously i
 ###  1. Analyst Feedback Collection
 
 Security analysts review alerts and provide feedback:
-
 - True Positive (valid threat)  
 - False Positive (benign activity)  
 - Suspicious / requires investigation  
 
 This captures real-world expertise directly from SOC workflows.
 
-
 ###  2. Feedback Validation
 
 All incoming feedback is validated before use:
-
 - Authentication and access control  
 - Rate limiting to prevent abuse  
 - Detection of anomalous feedback patterns  
 
 Prevents data poisoning and ensures reliability.
 
-
 ###  3. Feedback Storage
 
 Validated feedback is stored as labeled data:
-
 - Linked with model predictions and timestamps  
 - Versioned for traceability  
 - Used as ground truth for retraining  
 
-
 ###  4. Retraining Integration
 
 Feedback is incorporated into the training pipeline:
-
 - Improves model accuracy over time  
 - Reduces false positives  
 - Adapts to new attack patterns  
 
 Retraining can be triggered by feedback volume or drift signals.
 
-
 ###  5. Continuous Learning
 
 The system evolves based on real-world usage:
-
 - Learns from analyst corrections  
 - Updates detection logic  
 - Improves operational efficiency  
